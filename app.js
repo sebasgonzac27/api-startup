@@ -1,9 +1,11 @@
 import express, { json } from 'express'
+
 import { corsMiddleware } from './src/middlewares/cors.js'
 import { usersRouter } from './src/routes/users.js'
 import { campusesRouter } from './src/routes/campuses.js'
 import { classroomsRouter } from './src/routes/classrooms.js'
 import { programsRouter } from './src/routes/programs.js'
+import config from './config.js'
 
 const app = express()
 
@@ -32,9 +34,7 @@ app.use('/campuses', campusesRouter)
 app.use('/classrooms', classroomsRouter)
 app.use('/programs', programsRouter)
 
-const PORT = process.env.PORT ?? 1234
-
-app.set('port', PORT)
+app.set('port', config.app.port)
 
 app.listen(app.get('port'), () => {
   console.log(`Server listening on port http://localhost:${app.get('port')}`)
