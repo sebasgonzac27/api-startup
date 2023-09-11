@@ -1,1 +1,5 @@
+### Obtener Usuarios
 GET http://localhost:1234/users
+
+### Agregar Usuarios
+POST http://localhost:1234/users
