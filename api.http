@@ -1,5 +1,18 @@
-### Obtener Usuarios
+### Obtener todos los usuarios
 GET http://localhost:1234/users
 
-### Agregar Usuarios
+### Seleccionar un usuario
+GET http://localhost:1234/users/11ee51cb-241c-2268-aeea-b48c9daeb3a7
+
+### Agregar un usuario
 POST http://localhost:1234/users
+Content-Type: application/json
+
+{
+    "FullName": "Carlos Alberto Delgado Galeano",
+    "Email": "carlos.delgado.galeano@correounivalle.edu.co",
+    "Username": "petus.delgado",
+    "Password": "petus123",
+    "Phone": "0000000000",
+    "Role": "Student"
+}
