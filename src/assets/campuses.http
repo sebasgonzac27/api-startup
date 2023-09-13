@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ### Delete campus
-DELETE http://localhost:1234/campuses/2
+DELETE http://localhost:1234/campuses/3
