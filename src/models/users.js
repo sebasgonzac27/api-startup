@@ -19,7 +19,7 @@ export class UserModel {
     return user
   }
 
-  static async addUser (data) {
+  static async create (data) {
     const { FullName, Email, Username, Password, Phone, Role } = data
     const [[{ ID }]] = await database.query('SELECT UUID() ID FROM Users;')
     const result = await database.query(
@@ -29,7 +29,7 @@ export class UserModel {
     return result
   }
 
-  static async updateUser (data, id) {
+  static async update (data, id) {
     const ID = id
     const { FullName, Email, Username, Password, Phone, Role } = data
     const result = await database.query(
@@ -41,7 +41,7 @@ export class UserModel {
     return result
   }
 
-  static async deleteUser (id) {
+  static async delete (id) {
     const ID = id
     const result = await database.query(
       `DELETE FROM Users

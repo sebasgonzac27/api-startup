@@ -8,10 +8,10 @@ usersRouter.get('/', UsersController.getAll)
 usersRouter.get('/:id', UsersController.getById)
 
 // POST
-usersRouter.post('/', UsersController.addUser)
+usersRouter.post('/', UsersController.create)
 
 // PATCH
-usersRouter.patch('/:id', UsersController.updateUser)
+usersRouter.patch('/:id', UsersController.update)
 
 // DELETE
-usersRouter.delete('/:id', UsersController.deleteUser)
+usersRouter.delete('/:id', UsersController.delete)
