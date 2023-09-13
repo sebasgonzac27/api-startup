@@ -16,3 +16,19 @@ Content-Type: application/json
     "Phone": "0000000000",
     "Role": "Student"
 }
+
+### Actualizar un usuario
+PATCH http://localhost:1234/users/cf8e0ccd-51da-11ee-aeea-b48c9daeb3a7
+Content-Type: application/json
+
+{
+    "FullName": "Carlos Alberto Delgado Galeano",
+    "Email": "carlos.delgado.galeano@correounivalle.edu.co",
+    "Username": "petus.delgado",
+    "Password": "petus123",
+    "Phone": "3183764127",
+    "Role": "Student"
+}
+
+### Eliminar un usuario
+DELETE http://localhost:1234/users/aeec6beb-51da-11ee-aeea-b48c9daeb3a7
