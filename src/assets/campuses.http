@@ -1,0 +1,24 @@
+### Get all campuses
+GET http://localhost:1234/campuses
+
+### Get campus by id
+GET http://localhost:1234/campuses/1
+
+### Create campus
+POST http://localhost:1234/campuses
+Content-Type: application/json
+
+{
+    "CampusName": "Victoria"
+}
+
+### Update campus
+PATCH http://localhost:1234/campuses/1
+Content-Type: application/json
+
+{
+    "CampusName": "Villa Campestre"
+}
+
+### Delete campus
+DELETE http://localhost:1234/campuses/2
