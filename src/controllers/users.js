@@ -30,4 +30,25 @@ export class UsersController {
       error(req, res, e.message, e.status)
     }
   }
+
+  static async updateUser (req, res) {
+    const data = req.body
+    const { id } = req.params
+    try {
+      const updated = await UserModel.updateUser(data, id)
+      success(req, res, updated, 200)
+    } catch (e) {
+      error(req, res, e.message, e.status)
+    }
+  }
+
+  static async deleteUser (req, res) {
+    const { id } = req.params
+    try {
+      const deleted = await UserModel.deleteUser(id)
+      success(req, res, deleted, 200)
+    } catch (e) {
+      error(req, res, e.message, e.status)
+    }
+  }
 }

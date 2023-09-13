@@ -13,7 +13,7 @@ export class UserModel {
     const user = await database.query(
       `SELECT BIN_TO_UUID(ID) AS ID, FullName, Email, Username, Password, Phone, Role
       FROM Users
-      WHERE ID = UUID_TO_BIN(?)`,
+      WHERE ID = UUID_TO_BIN(?);`,
       [id]
     )
     return user
@@ -21,11 +21,33 @@ export class UserModel {
 
   static async addUser (data) {
     const { FullName, Email, Username, Password, Phone, Role } = data
-    const [ID] = await database.query('SELECT UUID() id FROM Users;')
+    const [[{ ID }]] = await database.query('SELECT UUID() ID FROM Users;')
     const result = await database.query(
       `INSERT INTO Users 
-      VALUES (?,?,?,?,?,?,?)`,
+      VALUES (UUID_TO_BIN(?),?,?,?,?,?,?);`,
       [ID, FullName, Email, Username, Password, Phone, Role])
+    return result
+  }
+
+  static async updateUser (data, id) {
+    const ID = id
+    const { FullName, Email, Username, Password, Phone, Role } = data
+    const result = await database.query(
+      `UPDATE Users
+      SET FullName = ?, Email = ?, Username = ?, Password = ?, Phone = ?, Role = ?
+      WHERE ID = UUID_TO_BIN(?);`,
+      [FullName, Email, Username, Password, Phone, Role, ID]
+    )
+    return result
+  }
+
+  static async deleteUser (id) {
+    const ID = id
+    const result = await database.query(
+      `DELETE FROM Users
+      WHERE ID = UUID_TO_BIN(?);`,
+      [ID]
+    )
     return result
   }
 }
