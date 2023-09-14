@@ -1,0 +1,56 @@
+/* Establecer el color de texto blanco para el encabezado h1 */
+.encabezado {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    background-color: #db1111d5;
+    width: 100%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+
+/* Estilos para la columna izquierda con opciones de menú y calendario */
+.menu-options {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.menu-options h2 {
+    font-size: 18px;
+}
+
+.menu-options label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.menu-options select,
+.menu-options input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Estilos para el encabezado y la información en la columna derecha */
+.info {
+    margin-top: 20px;
+}
+
+.info h2 {
+    font-size: 18px;
+}
+
+
+/* Estilo para el contenedor con desplazamiento vertical */
+.custom-scroll {
+    max-height: 400px; /* Altura máxima */
+    width: auto ; /* Ancho del contenedor */
+    overflow-y: auto; /* Barra de desplazamiento vertical */
+    background-color: #F2F2F2; /* Color de fondo gris claro */
+    padding: 10px; /* Espaciado interior */
+}

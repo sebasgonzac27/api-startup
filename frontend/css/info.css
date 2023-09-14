@@ -1,0 +1,57 @@
+.cuerpo{
+    background-color: #db1111d5;
+}
+.container{
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 1.25rem; /* Espaciado interno de 20px (5 * 4px) */
+    border-radius: 0.9rem; /* Bordes redondeados de 8px */
+    color: #6c757d; /* Color de texto secundario */
+    box-shadow: 0px 0px 4px 6px rgba(255, 0, 0, 0.301);
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1 {
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #6c757d; 
+    text-align: center;
+    border-bottom: 2px solid #db1111d5; 
+    height: 7rem; 
+    
+}
+
+p {
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+
+.btn-volver {
+    display: inline-block;
+    background-color: #db1111; /* Fondo rojo */
+    color: #fff !important; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    font-weight: bold; 
+}
+
+.btn-volver:hover {
+    background-color: #a50303; /* Cambio de color al pasar el ratón */
+}
+
+.custom-div{
+    text-align: center;
+}
+
