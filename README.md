@@ -9,6 +9,7 @@
 - Classrooms
   `GET, POST, PUT, DELETE`
 - Programs
+  `GET, POST, PUT, DELETE`
 - DeviceTypes
 - Devices
 - Requests
