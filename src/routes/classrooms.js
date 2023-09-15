@@ -10,8 +10,8 @@ classroomsRouter.get('/:id', ClassroomsController.getById)
 // POST
 classroomsRouter.post('/', ClassroomsController.create)
 
-// PATCH
-classroomsRouter.patch('/:id', ClassroomsController.update)
+// PUT
+classroomsRouter.put('/:id', ClassroomsController.update)
 
 // DELETE
 classroomsRouter.delete('/:id', ClassroomsController.delete)

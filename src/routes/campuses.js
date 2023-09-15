@@ -10,8 +10,8 @@ campusesRouter.get('/:id', CampusesController.getById)
 // POST
 campusesRouter.post('/', CampusesController.create)
 
-// PATCH
-campusesRouter.patch('/:id', CampusesController.update)
+// PUT
+campusesRouter.put('/:id', CampusesController.update)
 
 // DELETE
 campusesRouter.delete('/:id', CampusesController.delete)
