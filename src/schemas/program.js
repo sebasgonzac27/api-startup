@@ -2,7 +2,7 @@ import z from 'zod'
 
 const ProgramSchema = z.object({
   ID: z.number().int().positive(),
-  ProgramName: z.string()
+  ProgramName: z.string().nonempty()
 })
 
 export function validateProgram (input) {

@@ -1,7 +1,7 @@
 import z from 'zod'
 
 const CampusSchema = z.object({
-  CampusName: z.string()
+  CampusName: z.string().nonempty()
 })
 
 export function validateCampus (input) {

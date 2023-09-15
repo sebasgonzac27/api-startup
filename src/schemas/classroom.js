@@ -1,7 +1,7 @@
 import z from 'zod'
 
 const ClassromSchema = z.object({
-  ClassroomName: z.string(),
+  ClassroomName: z.string().nonempty(),
   CampusID: z.number().int().min(0)
 })
 
