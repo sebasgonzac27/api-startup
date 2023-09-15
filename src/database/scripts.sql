@@ -35,7 +35,8 @@ CREATE TABLE Classrooms (
 -- Create the DeviceTypes table
 CREATE TABLE DeviceTypes (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    TypeName VARCHAR(255) NOT NULL UNIQUE
+    TypeName VARCHAR(255) NOT NULL UNIQUE,
+    ImageURL VARCHAR(255)
 );
 
 -- Create the Devices table
@@ -50,7 +51,7 @@ CREATE TABLE Devices (
 
 -- Create the Programs table
 CREATE TABLE Programs (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     ProgramName VARCHAR(255) UNIQUE NOT NULL
 );
 
