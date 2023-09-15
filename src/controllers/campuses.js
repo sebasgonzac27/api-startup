@@ -1,5 +1,5 @@
 import { CampusesModel } from '../models/campuses.js'
-import { validateCampus, validatePartialCampus } from '../schemas/campuses.js'
+import { validateCampus, validatePartialCampus } from '../schemas/campus.js'
 import { error, success } from '../utils/responses.js'
 
 export class CampusesController {
@@ -31,6 +31,8 @@ export class CampusesController {
       } catch (e) {
         error(req, res, e.message, e.status)
       }
+    } else {
+      error(req, res, JSON.parse(result.error.message), 400)
     }
   }
 
@@ -44,6 +46,8 @@ export class CampusesController {
       } catch (e) {
         error(req, res, e.message, e.status)
       }
+    } else {
+      error(req, res, JSON.parse(result.error.message), 400)
     }
   }
 
