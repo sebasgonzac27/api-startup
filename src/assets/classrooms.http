@@ -1,0 +1,26 @@
+### Get all classrooms
+GET http://localhost:1234/classrooms
+
+### Get a classroom
+GET http://localhost:1234/classrooms/1
+
+### Create a classroom
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 1",
+    "CampusID": 4
+}
+
+### Update a classroom
+PATCH http://localhost:1234/classrooms/1
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 01",
+    "CampusID": 4
+}
+
+### Delete a classroom
+DELETE http://localhost:1234/classrooms/1
