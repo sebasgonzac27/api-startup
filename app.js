@@ -6,6 +6,7 @@ import { campusesRouter } from './src/routes/campuses.js'
 import { classroomsRouter } from './src/routes/classrooms.js'
 import { programsRouter } from './src/routes/programs.js'
 import config from './config.js'
+import { deviceTypesRouter } from './src/routes/deviceTypes.js'
 
 const app = express()
 
@@ -33,6 +34,7 @@ app.use('/users', usersRouter)
 app.use('/campuses', campusesRouter)
 app.use('/classrooms', classroomsRouter)
 app.use('/programs', programsRouter)
+app.use('/devicetypes', deviceTypesRouter)
 
 app.set('port', config.app.port)
 
