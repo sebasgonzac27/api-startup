@@ -94,3 +94,30 @@ CREATE TABLE DevicesRequests (
     FOREIGN KEY (RequestID) REFERENCES Requests(ID),
     FOREIGN KEY (DeviceID) REFERENCES Devices(ID)
 );
+
+-- Add ON DELETE CASCADE to FOREIGN KEY constraints
+
+-- In the Classrooms table, when a row in Campuses is deleted, related rows in Classrooms will also be deleted.
+ALTER TABLE Classrooms
+ADD FOREIGN KEY (CampusID) REFERENCES Campuses(ID) ON DELETE CASCADE;
+
+-- In the Devices table, when a row in DeviceTypes is deleted, related rows in Devices will also be deleted.
+ALTER TABLE Devices
+ADD FOREIGN KEY (DeviceTypeID) REFERENCES DeviceTypes(ID) ON DELETE CASCADE;
+
+-- In the Requests table, when a row in Users is deleted, related rows in Requests for UserID, ApprovedBy, and ClosedBy will also be deleted.
+ALTER TABLE Requests
+ADD FOREIGN KEY (UserID) REFERENCES Users(ID) ON DELETE CASCADE,
+ADD FOREIGN KEY (ApprovedBy) REFERENCES Users(ID) ON DELETE CASCADE,
+ADD FOREIGN KEY (ClosedBy) REFERENCES Users(ID) ON DELETE CASCADE;
+
+-- In the DeviceTypeRequests table, when a row in Requests or Devices is deleted, related rows in DeviceTypeRequests will also be deleted.
+ALTER TABLE DeviceTypeRequests
+ADD FOREIGN KEY (RequestID) REFERENCES Requests(ID) ON DELETE CASCADE,
+ADD FOREIGN KEY (DeviceTypeID) REFERENCES DeviceTypes(ID) ON DELETE CASCADE,
+ADD FOREIGN KEY (Device) REFERENCES Devices(ID) ON DELETE CASCADE;
+
+-- In the DevicesRequests table, when a row in Requests or Devices is deleted, related rows in DevicesRequests will also be deleted.
+ALTER TABLE DevicesRequests
+ADD FOREIGN KEY (RequestID) REFERENCES Requests(ID) ON DELETE CASCADE,
+ADD FOREIGN KEY (DeviceID) REFERENCES Devices(ID) ON DELETE CASCADE;
