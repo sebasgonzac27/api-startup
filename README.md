@@ -8,3 +8,9 @@
   `GET, POST, PUT, DELETE`
 - Classrooms
   `GET, POST, PUT, DELETE`
+- Programs
+- DeviceTypes
+- Devices
+- Requests
+- DeviceTypesRequests
+- DevicesRequests
