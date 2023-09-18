@@ -11,24 +11,24 @@ Content-Type: application/json
 {
     "FullName": "Carlos Alberto Delgado Galeano",
     "Email": "carlos.delgado.galeano@correounivalle.edu.co",
-    "Username": "petus.delgado",
+    "Username": 1968127,
     "Password": "petus123",
     "Phone": 1234567890,
     "Role": "Student"
 }
 
 ### Actualizar un usuario
-PATCH http://localhost:1234/users/aa3d0750-523e-11ee-aee3-b48c9daeb3a7
+PUT http://localhost:1234/users/b89044e0-55ce-11ee-baad-b48c9daeb3a7
 Content-Type: application/json
 
 {
-    "FullName": "Carlos Alberto Delgado Galeano",
-    "Email": "carlos.delgado.galeano@correounivalle.edu.co",
-    "Username": "petus.delgado",
-    "Password": "petus123",
-    "Phone": 3183764127,
+    "FullName": "Juan Sebastian Gonzalez Camacho",
+    "Email": "juan.s.gonzalez.c@correounivalle.edu.co",
+    "Username": 1968220,
+    "Password": "juan123",
+    "Phone": 3175852505,
     "Role": "Student"
 }
 
 ### Eliminar un usuario
-DELETE http://localhost:1234/users/33b38e76-523e-11ee-aee3-b48c9daeb3a7
+DELETE http://localhost:1234/users/7e8fcb51-55ce-11ee-baad-b48c9daeb3a7
