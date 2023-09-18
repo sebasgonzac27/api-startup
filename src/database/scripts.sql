@@ -58,10 +58,10 @@ CREATE TABLE Programs (
 -- Create the Requests table
 CREATE TABLE Requests (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    RequestDate DATE NOT NULL,
-    BorrowDate DATE NOT NULL,
-    StartTime TIME NOT NULL,
-    EndTime TIME NOT NULL,
+    RequestDate TIMESTAMP NOT NULL,
+    BorrowDate TIMESTAMP NOT NULL,
+    StartTime TIMESTAMP NOT NULL,
+    EndTime TIMESTAMP NOT NULL,
     ClassroomID INT NOT NULL,
     ActivityDescription TEXT NOT NULL,
     RequestStatus ENUM('Pending', 'Approved', 'Closed') NOT NULL,
