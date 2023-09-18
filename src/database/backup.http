@@ -1,0 +1,200 @@
+### Users
+POST http://localhost:1234/users
+Content-Type: application/json
+
+{
+    "FullName": "Carlos Alberto Delgado Galeano",
+    "Email": "carlos.delgado.galeano@correounivalle.edu.co",
+    "Username": 1968127,
+    "Password": "petus123",
+    "Phone": 1234567890,
+    "Role": "Student"
+}
+###
+POST http://localhost:1234/users
+Content-Type: application/json
+
+{
+    "FullName": "Juan Sebastian Gonzalez Camacho",
+    "Email": "juan.s.gonzalez.c@correounivalle.edu.co",
+    "Username": 1968220,
+    "Password": "juanito27",
+    "Phone": 3175852505,
+    "Role": "Student"
+}
+
+### Campuses
+POST http://localhost:1234/campuses
+Content-Type: application/json
+
+{
+    "CampusName": "Villa Campestre"
+}
+
+###
+POST http://localhost:1234/campuses
+Content-Type: application/json
+
+{
+    "CampusName": "Príncipe"
+}
+
+###
+POST http://localhost:1234/campuses
+Content-Type: application/json
+
+{
+    "CampusName": "Victoria"
+}
+
+### Classrooms
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 1",
+    "CampusID": 1
+}
+
+###
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 2",
+    "CampusID": 1
+}
+
+###
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 3",
+    "CampusID": 1
+}
+
+###
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 1",
+    "CampusID": 2
+}
+
+###
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 2",
+    "CampusID": 2
+}
+
+###
+POST http://localhost:1234/classrooms
+Content-Type: application/json
+
+{
+    "ClassroomName": "Salón 3",
+    "CampusID": 2
+}
+
+### Programs
+POST http://localhost:1234/programs
+Content-Type: application/json
+
+{
+    "ID": 2710,
+    "ProgramName": "Tecnología en Electrónica"
+}
+
+###
+POST http://localhost:1234/programs
+Content-Type: application/json
+
+{
+    "ID": 3743,
+    "ProgramName": "Ingeniería de Sistemas"
+}
+
+###
+POST http://localhost:1234/programs
+Content-Type: application/json
+
+{
+    "ID": 3753,
+    "ProgramName": "Ingeniería en Alimentos"
+}
+
+### Device Types
+POST http://localhost:1234/devicetypes
+Content-Type: application/json
+
+{
+    "TypeName": "Convertidor HDMI a VGA",
+    "ImageURL": "https://exitocol.vtexassets.com/arquivos/ids/322711/Cable-Adaptador-HDMI-a-VGA---15cm.jpg?v=637004710162100000"
+}
+
+###
+POST http://localhost:1234/devicetypes
+Content-Type: application/json
+
+{
+    "TypeName": "Cable HDMI",
+    "ImageURL": "https://systorecolombia.com/1392-large_default/cable-hdmi-de-15-metros-full-hd-encauchetado.jpg"
+}
+
+###
+POST http://localhost:1234/devicetypes
+Content-Type: application/json
+
+{
+    "TypeName": "Parlantes",
+    "ImageURL": "https://www.tecnologiamayorista.com/cdn/shop/products/1627263964_535x.jpg?v=1681238903"
+}
+
+### Devices
+POST http://localhost:1234/devices
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 1,
+    "InventoryNumber": 1122398,
+    "IdentifierNumber": null,
+    "DeviceStatus": "Available"
+}
+
+###
+POST http://localhost:1234/devices
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 1,
+    "InventoryNumber": 1122399,
+    "IdentifierNumber": null,
+    "DeviceStatus": "In use"
+}
+
+###
+POST http://localhost:1234/devices
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 2,
+    "InventoryNumber": 12345,
+    "IdentifierNumber": null,
+    "DeviceStatus": "Available"
+}
+
+###
+POST http://localhost:1234/devices
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 2,
+    "InventoryNumber": 12348,
+    "IdentifierNumber": null,
+    "DeviceStatus": "Damaged"
+}
