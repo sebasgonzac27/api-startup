@@ -1,0 +1,30 @@
+### Get all devices
+GET http://localhost:1234/devices
+
+### Get a device
+GET http://localhost:1234/devices/1
+
+### Create a device
+POST http://localhost:1234/devices
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 1,
+    "InventoryNumber": 1122398,
+    "IdentifierNumber": null,
+    "DeviceStatus": "Available"
+}
+
+### Update a device
+PUT http://localhost:1234/devices/1
+Content-Type: application/json
+
+{
+    "DeviceTypeID": 1,
+    "InventoryNumber": 1005968,
+    "IdentifierNumber": null,
+    "DeviceStatus": "In use"
+}
+
+### Remove a device
+DELETE http://localhost:1234/devices/2
