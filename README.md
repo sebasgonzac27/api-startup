@@ -15,5 +15,6 @@
 - Devices
   `GET, POST, PUT, DELETE`
 - Requests
+  `GET, POST, PUT, DELETE`
 - DeviceTypesRequests
 - DevicesRequests

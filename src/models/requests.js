@@ -1,4 +1,5 @@
 import database from '../database/mysql.js'
+import { formatDate } from '../utils/formatDate.js'
 
 export class RequestsModel {
   static async getAll () {
@@ -21,7 +22,7 @@ export class RequestsModel {
   }
 
   static async create (data) {
-    const RequestDate = new Date()
+    const RequestDate = formatDate(new Date())
     const RequestStatus = 'Pending'
     const {
       StartTime,
@@ -41,8 +42,8 @@ export class RequestsModel {
             RequestStatus,
             UserID,
             ProgramID)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
-        [RequestDate, RequestStatus, StartTime, EndTime, ClassroomID, ActivityDescription, UserID, ProgramID]
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
+        [RequestDate, StartTime, EndTime, ClassroomID, ActivityDescription, RequestStatus, UserID, ProgramID]
     )
     return created
   }

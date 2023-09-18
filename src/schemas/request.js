@@ -1,10 +1,10 @@
 import z from 'zod'
 
 const RequestSchema = z.object({
-  RequestDate: z.coerce.date(),
-  BorrowDate: z.coerce.date().nullable(),
-  StartTime: z.coerce.date(),
-  EndTime: z.coerce.date(),
+  RequestDate: z.string().datetime(),
+  BorrowDate: z.string().datetime().nullable(),
+  StartTime: z.string().datetime(),
+  EndTime: z.string().datetime(),
   ClassroomID: z.number().int().positive(),
   ActivityDescription: z.string().nonempty(),
   RequestStatus: z.enum(['Pending', 'Approved', 'Closed']),
@@ -15,6 +15,7 @@ const RequestSchema = z.object({
 })
 
 export function validateRequest (input) {
+  console.log(input)
   return RequestSchema.safeParse(input)
 }
 

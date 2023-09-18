@@ -23,7 +23,7 @@ export class RequestsController {
   }
 
   static async create (req, res) {
-    const result = validateRequest(req.body)
+    const result = validatePartialRequest(req.body)
     if (result.success) {
       try {
         const added = await RequestsModel.create(result.data)
