@@ -3,14 +3,14 @@ import database from '../database/mysql.js'
 export class DevicesModel {
   static async getAll () {
     const devices = await database.query(
-      'SELECT Device.ID, Device.DeviceTypeID, DeviceType.TypeName, Device.InventoryNumber, Device.IdentifierNumber, Device.DeviceStatus, DeviceType.ImageURL FROM Devices as Device INNER JOIN DeviceTypes as DeviceType ON DeviceType.ID = Device.DeviceTypeID  ORDER BY Device.ID;'
+      'SELECT * FROM Devices ORDER BY ID;'
     )
     return devices
   }
 
   static async getById (id) {
     const device = await database.query(
-      'SELECT Device.ID, Device.DeviceTypeID, DeviceType.TypeName, Device.InventoryNumber, Device.IdentifierNumber, Device.DeviceStatus, DeviceType.ImageURL FROM Devices as Device INNER JOIN DeviceTypes as DeviceType ON DeviceType.ID = Device.DeviceTypeID  WHERE Device.ID = ?;',
+      'SELECT * FROM Devices WHERE Device.ID = ?;',
       [id]
     )
     return device

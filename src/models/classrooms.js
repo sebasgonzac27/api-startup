@@ -3,15 +3,14 @@ import database from '../database/mysql.js'
 export class ClassroomModel {
   static async getAll () {
     const classrooms = await database.query(
-      'SELECT Classroom.ID, Classroom.ClassroomName, Classroom.CampusID, Campus.CampusName FROM Classrooms as Classroom INNER JOIN Campuses as Campus ON Classroom.CampusID = Campus.ID;'
+      'SELECT * FROM Classrooms ORDER BY ID;'
     )
     return classrooms
   }
 
   static async getById (id) {
     const classroom = await database.query(
-      `SELECT Classroom.ID, Classroom.ClassroomName, Classroom.CampusID, Campus.CampusName FROM Classrooms as Classroom INNER JOIN Campuses as Campus ON Classroom.CampusID = Campus.ID
-      WHERE Classroom.ID = ?;`,
+      'SELECT * FROM Classrooms WHERE ID = ?;',
       [id]
     )
     return classroom
