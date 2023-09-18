@@ -27,7 +27,7 @@ CREATE TABLE Campuses (
 -- Create the Classrooms table
 CREATE TABLE Classrooms (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    ClassroomName VARCHAR(255) UNIQUE,
+    ClassroomName VARCHAR(255),
     CampusID INT NOT NULL,
     FOREIGN KEY (CampusID) REFERENCES Campuses(ID)
 );
