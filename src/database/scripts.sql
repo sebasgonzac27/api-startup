@@ -12,7 +12,7 @@ CREATE TABLE Users (
     ID BINARY(16) PRIMARY KEY,
     FullName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    Username VARCHAR(50) UNIQUE NOT NULL,
+    Username INT UNIQUE NOT NULL,
     Password VARCHAR(255) NOT NULL,
     Phone VARCHAR(15) NOT NULL,
     Role ENUM('Student', 'Teacher', 'Administrator') NOT NULL
@@ -43,8 +43,8 @@ CREATE TABLE DeviceTypes (
 CREATE TABLE Devices (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     DeviceTypeID INT NOT NULL,
-    InventoryNumber VARCHAR(50),
-    IdentifierNumber VARCHAR(50),
+    InventoryNumber INT,
+    IdentifierNumber INT,
     DeviceStatus ENUM('Available', 'In use', 'Damaged') NOT NULL,
     FOREIGN KEY (DeviceTypeID) REFERENCES DeviceTypes(ID)
 );
