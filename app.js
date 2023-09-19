@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express, { json } from 'express'
 
 import { corsMiddleware } from './src/middlewares/cors.js'
