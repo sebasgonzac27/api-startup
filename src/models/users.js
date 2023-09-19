@@ -1,4 +1,5 @@
 import database from '../database/mysql.js'
+import bcrypt from 'bcrypt'
 
 export class UserModel {
   static async getAll () {
@@ -21,11 +22,11 @@ export class UserModel {
 
   static async create (data) {
     const { FullName, Email, Username, Password, Phone, Role } = data
-    const [[{ ID }]] = await database.query('SELECT UUID() ID FROM Users;')
+    const [[{ ID }]] = await database.query('SELECT UUID() ID;')
     const result = await database.query(
       `INSERT INTO Users 
       VALUES (UUID_TO_BIN(?),?,?,?,?,?,?);`,
-      [ID, FullName, Email, Username, Password, Phone, Role])
+      [ID, FullName, Email, Username, await bcrypt.hash(Password, 12), Phone, Role])
     return result
   }
 
@@ -36,7 +37,7 @@ export class UserModel {
       `UPDATE Users
       SET FullName = ?, Email = ?, Username = ?, Password = ?, Phone = ?, Role = ?
       WHERE ID = UUID_TO_BIN(?);`,
-      [FullName, Email, Username, Password, Phone, Role, ID]
+      [FullName, Email, Username, await bcrypt.hash(Password, 12), Phone, Role, ID]
     )
     return result
   }

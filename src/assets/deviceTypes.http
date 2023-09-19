@@ -1,0 +1,25 @@
+### Get all device types
+GET http://localhost:1234/devicetypes
+
+### Get a device type
+GET http://localhost:1234/devicetypes/1
+
+### Create a device type
+POST http://localhost:1234/devicetypes
+Content-Type: application/json
+
+{
+    "TypeName": "Convertidor HDMI a VGA",
+    "ImageURL": "https://exitocol.vtexassets.com/arquivos/ids/322711/Cable-Adaptador-HDMI-a-VGA---15cm.jpg?v=637004710162100000"
+}
+
+### Update a device type
+PUT http://localhost:1234/devicetypes/1
+Content-Type: application/json
+
+{
+    "TypeName": "Cable HDMI"
+}
+
+### Delete a device type
+DELETE http://localhost:1234/devicetypes/1

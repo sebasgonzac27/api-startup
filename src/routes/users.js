@@ -10,8 +10,8 @@ usersRouter.get('/:id', UsersController.getById)
 // POST
 usersRouter.post('/', UsersController.create)
 
-// PATCH
-usersRouter.patch('/:id', UsersController.update)
+// PUT
+usersRouter.put('/:id', UsersController.update)
 
 // DELETE
 usersRouter.delete('/:id', UsersController.delete)

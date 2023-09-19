@@ -1,0 +1,25 @@
+### Get programs
+GET http://localhost:1234/programs
+
+### Get a program
+GET http://localhost:1234/programs/1
+
+### Create a program
+POST http://localhost:1234/programs
+Content-Type: application/json
+
+{
+    "ID": 2710,
+    "ProgramName": "Tecnología en Electrónica"
+}
+
+### Update a program
+PUT http://localhost:1234/programs/1
+Content-Type: application/json
+
+{
+    "ProgramName": "Ingeniería en alimentos"
+}
+
+### Delete a program
+DELETE http://localhost:1234/programs/1
