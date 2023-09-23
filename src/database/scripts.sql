@@ -1,6 +1,3 @@
--- Delete Database
-DROP DATABASE University;
-
 -- Create Database
 CREATE DATABASE University;
 
