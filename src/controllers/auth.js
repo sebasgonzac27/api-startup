@@ -1,36 +1,45 @@
-import User from '../models/users.js';
-import { createToken } from '../schemas/index.js';
+import { UserModel } from '../models/users.js';
+import { createToken } from '../schemas/token.js'; // Asegúrate de que la ruta es correcta
+import bcrypt from 'bcrypt';
 
-// Función para crear un usuario nuevo o registrarse
-export async function signUp(req, res) {
-  const user = new User({
-    FullName: req.body.FullName,
-    Email: req.body.Email
-  });
+export class AuthController {
+  
+  static async signUp(req, res) {
+    // Aquí probablemente quieras cifrar la contraseña antes de guardarla
+    const hashedPassword = await bcrypt.hash(req.body.Password, 12);
+    
+    const user = {
+      FullName: req.body.FullName,
+      Email: req.body.Email,
+      Username: req.body.Username,
+      Password: hashedPassword,
+      Phone: req.body.Phone,
+      Role: req.body.Role
+    };
 
-  try {
-    await user.save();
-    const token = createToken(user);
-    res.status(200).send({ token });
-  } catch (err) {
-    res.status(500).send({ message: `Error al crear el usuario: ${err}` });
-  }
-}
-
-// Función para iniciar sesión
-export async function signIn(req, res) {
-  try {
-    const user = await User.findOne({ Email: req.body.Email });
-    if (!user) {
-      res.status(404).send({ message: 'No existe el usuario' });
-      return;
+    try {
+      const newUser = await UserModel.create(user);
+      const token = createToken(newUser);
+      res.status(201).send({ token });
+    } catch (err) {
+      res.status(500).send({ message: `Error al crear el usuario: ${err}` });
     }
+  }
 
-    res.status(200).send({
-      message: 'Te has logeado correctamente',
-      token: createToken(user)
-    });
-  } catch (err) {
-    res.status(500).send({ message: err });
+  static async signIn(req, res) {
+    try {
+      const user = await UserModel.getByEmail(req.body.Email);
+      if (!user || !await bcrypt.compare(req.body.Password, user.Password)) {
+        return res.status(401).send({ message: 'Email o contraseña incorrectos' });
+      }
+
+      const token = createToken(user);
+      res.status(200).send({
+        message: 'Te has logeado correctamente',
+        token
+      });
+    } catch (err) {
+      res.status(500).send({ message: err });
+    }
   }
 }

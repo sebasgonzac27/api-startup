@@ -1,2 +1,28 @@
-### Get
+### Get (No funciona)
 http://localhost:1234/auth
+
+### Post registrarse
+http://localhost:1234/users
+
+{
+    "FullName": "Carlos Dinamo",
+    "Email": "carlos.Dinamo@correounivalle.edu.co",
+    "Username": 12239904,
+    "Password": "delaClaus123",
+    "Phone": 123144456567,
+    "Role": "Student"
+}
+
+### Post login
+http://localhost:1234/login
+
+{
+    "Email": "carlos.Dinamo@correounivalle.edu.co",
+    "Password": "delaClaus123"
+}
+
+esto devuelve un token que se debe usar en el header de las peticiones que requieran autorizacion
+
+### Get auatorizacion
+http://localhost:1234/auth?
+Authorization eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU1MDcxNTIsImV4cCI6MTY5NTU5MzU1Mn0.XyDrmLXaZyIXnsJy2IX9in5NxLUDlKb4FT8WJTPuloM

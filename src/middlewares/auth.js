@@ -1,17 +1,17 @@
-import  {decodeToken} from '../schemas/index.js';
+// middlewares/auth.js
+import { verifyToken } from '../schemas/token.js';
 
-export async function isAuth(req, res, next) {
-    if (!req.headers.authorization) {
-        return res.status(403).send({ message: 'No tienes autorización' });
-    }
+export function isAuthenticated(req, res, next) {
+  const token = req.headers.authorization;
+  if (!token) {
+    return res.status(403).send({ message: 'No token provided.' });
+  }
 
-    const token = req.headers.authorization.split(" ")[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).send({ message: 'Invalid token.' });
+  }
 
-    try {
-        const response = await decodeToken(token);
-        req.user = response;
-        next();
-    } catch (error) {
-        res.status(error.status);
-    }
+  req.userId = decoded.id;
+  next();
 }

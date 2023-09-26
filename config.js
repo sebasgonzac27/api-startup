@@ -1,5 +1,6 @@
 import { config } from 'dotenv'
 
+const SECRET_KEY = process.env.JWT_SECRET || 'yourDefaultSecretKey';
 config()
 
 export default {

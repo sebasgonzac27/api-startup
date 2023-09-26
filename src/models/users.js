@@ -30,6 +30,16 @@ export class UserModel {
     return result
   }
 
+  static async getByEmail(email) {
+    const [user] = await database.query(
+      `SELECT BIN_TO_UUID(ID) AS ID, FullName, Email, Username, Password, Phone, Role
+      FROM Users
+      WHERE Email = ?;`,
+      [email]
+    );
+    return user[0];  // Retorna el primer resultado
+  }
+
   static async update (data, id) {
     const ID = id
     const { FullName, Email, Username, Password, Phone, Role } = data
