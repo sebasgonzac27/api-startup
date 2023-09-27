@@ -1,0 +1,25 @@
+### Get all devicesRequest
+GET http://localhost:1234/devicesrequests
+
+### Get a devicesRequest
+GET http://localhost:1234/devicesrequests/1
+
+### Create a devicesRequest
+POST http://localhost:1234/devicesrequests
+Content-Type: application/json
+
+{
+    "RequestID":21,
+    "DeviceID":2
+}
+### Update a devicesRequest
+PUT http://localhost:1234/devicesrequests/1
+Content-Type: application/json
+
+{
+    "RequestID":22,
+    "DeviceTypeID":2,
+}
+
+### Remove a devicesRequest
+DELETE http://localhost:1234/devicesrequests/1

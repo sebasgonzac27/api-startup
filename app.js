@@ -15,6 +15,8 @@ import { requestsRouter } from './src/routes/requests.js'
 import { AuthController } from './src/controllers/auth.js'
 import { isAuthenticated } from './src/middlewares/auth.js';
 import { UsersController } from './src/controllers/users.js';
+import { deviceTypeRequestsController } from './src/routes/deviceTypesRequests.js'
+import { deviceRequestsController } from './src/routes/deviceRequests.js'
 
 const app = express()
 
@@ -34,6 +36,8 @@ app.get('/', (req, res) => {
         devicetypes: '/devicetypes',
         devices: '/devices',
         requests: '/requests',
+        deviceTypesRequests: '/devicetypesrequests',
+        deviceRequests: '/devicesrequests',
         auth: '/auth',
         register: '/register',
         login: '/login'
@@ -49,6 +53,8 @@ app.use('/programs', programsRouter)
 app.use('/devicetypes', deviceTypesRouter)
 app.use('/devices', devicesRouter)
 app.use('/requests', requestsRouter)
+app.use('/devicetypesrequests', deviceTypeRequestsController)
+app.use('/devicesrequests', deviceRequestsController)
 //app.use('/register', AuthController.signUp) // No es necesario en este caso, ya existe un endpoint para crear usuarios
 app.use('/login', AuthController.signIn)
 app.use('/auth', isAuthenticated, UsersController.getAll)
