@@ -9,8 +9,8 @@ POST http://localhost:1234/requests
 Content-Type: application/json
 
 {
-    "StartTime": "2023-09-18 08:00:00",
-    "EndTime": "2023-09-18 12:00:00",
+    "StartTime": "2023-09-18T08:00:00.000Z",
+    "EndTime": "2023-09-18T12:00:00.000Z",
     "ClassroomID": 1,
     "ActivityDescription": "Fundamentos de Gestión Tecnológica",
     "UserID": "27165b47-55d6-11ee-baad-b48c9daeb3a7",
