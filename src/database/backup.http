@@ -5,7 +5,6 @@ Content-Type: application/json
 {
     "FullName": "Carlos Alberto Delgado Galeano",
     "Email": "carlos.delgado.galeano@correounivalle.edu.co",
-    "Username": 1968127,
     "Password": "petus123",
     "Phone": 1234567890,
     "Role": "Student"
@@ -17,7 +16,6 @@ Content-Type: application/json
 {
     "FullName": "Juan Sebastian Gonzalez Camacho",
     "Email": "juan.s.gonzalez.c@correounivalle.edu.co",
-    "Username": 1968220,
     "Password": "juanito27",
     "Phone": 3175852505,
     "Role": "Student"
@@ -133,8 +131,7 @@ POST http://localhost:1234/devicetypes
 Content-Type: application/json
 
 {
-    "TypeName": "Convertidor HDMI a VGA",
-    "ImageURL": "https://exitocol.vtexassets.com/arquivos/ids/322711/Cable-Adaptador-HDMI-a-VGA---15cm.jpg?v=637004710162100000"
+    "TypeName": "Convertidor HDMI a VGA"
 }
 
 ###
@@ -142,8 +139,7 @@ POST http://localhost:1234/devicetypes
 Content-Type: application/json
 
 {
-    "TypeName": "Cable HDMI",
-    "ImageURL": "https://systorecolombia.com/1392-large_default/cable-hdmi-de-15-metros-full-hd-encauchetado.jpg"
+    "TypeName": "Cable HDMI"
 }
 
 ###
@@ -151,8 +147,7 @@ POST http://localhost:1234/devicetypes
 Content-Type: application/json
 
 {
-    "TypeName": "Parlantes",
-    "ImageURL": "https://www.tecnologiamayorista.com/cdn/shop/products/1627263964_535x.jpg?v=1681238903"
+    "TypeName": "Parlantes"
 }
 
 ### Devices
@@ -197,4 +192,17 @@ Content-Type: application/json
     "InventoryNumber": 12348,
     "IdentifierNumber": null,
     "DeviceStatus": "Damaged"
+}
+
+### Create a request
+POST http://localhost:1234/requests
+Content-Type: application/json
+
+{
+    "StartTime": "2023-09-18 08:00:00",
+    "EndTime": "2023-09-18 12:00:00",
+    "ClassroomID": 1,
+    "ActivityDescription": "Fundamentos de Gestión Tecnológica",
+    "UserID": "30aca400-6015-11ee-98bd-b48c9daeb3a7",
+    "ProgramID": 3743
 }

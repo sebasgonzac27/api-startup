@@ -19,23 +19,23 @@ export class DeviceTypesModel {
   }
 
   static async create (data) {
-    const { TypeName, ImageURL } = data
+    const { TypeName } = data
     const created = await database.query(
         `INSERT INTO DeviceTypes
-        (TypeName, ImageURL)
-        VALUES (?, ?);`,
-        [TypeName, ImageURL]
+        (TypeName)
+        VALUES (?);`,
+        [TypeName]
     )
     return created
   }
 
   static async update (data, id) {
-    const { TypeName, ImagenURL } = data
+    const { TypeName } = data
     const updated = await database.query(
         `UPDATE DeviceTypes
-        SET TypeName = ?, ImageURL = ?
+        SET TypeName = ?
         WHERE ID = ?;`,
-        [TypeName, ImagenURL, id]
+        [TypeName, id]
     )
     return updated
   }

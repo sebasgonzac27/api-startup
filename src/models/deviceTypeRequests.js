@@ -39,9 +39,9 @@ export class DeviceTypeRequestsModel {
 
   static async update (data, id) {
     const {
-        RequestID,
-        DeviceTypeID,
-        Device
+      RequestID,
+      DeviceTypeID,
+      Device
     } = data
     const updated = await database.query(
         `UPDATE devicetyperequests

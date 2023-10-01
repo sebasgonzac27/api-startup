@@ -1,7 +1,4 @@
 export function formatDate (date) {
-  console.log(date)
-
-  // Crear un objeto Date a partir de la cadena original
   const fecha = date
 
   // Obtener los componentes de fecha y hora

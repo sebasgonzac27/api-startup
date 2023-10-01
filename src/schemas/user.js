@@ -3,7 +3,6 @@ import z from 'zod'
 const UserSchema = z.object({
   FullName: z.string().nonempty(),
   Email: z.string().trim().email().nonempty(),
-  Username: z.number().int().positive(),
   Password: z.string().nonempty(),
   Phone: z.number().int().positive(),
   Role: z.enum(['Student', 'Teacher', 'Administrator'])

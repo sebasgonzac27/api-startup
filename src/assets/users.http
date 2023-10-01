@@ -11,7 +11,6 @@ Content-Type: application/json
 {
     "FullName": "Carlos Alberto Delgado Galeano",
     "Email": "carlos.delgado.galeano@correounivalle.edu.co",
-    "Username": 1968127,
     "Password": "petus123",
     "Phone": 1234567890,
     "Role": "Student"
@@ -24,11 +23,10 @@ Content-Type: application/json
 {
     "FullName": "Juan Sebastian Gonzalez Camacho",
     "Email": "juan.s.gonzalez.c@correounivalle.edu.co",
-    "Username": 1968220,
     "Password": "juan123",
     "Phone": 3175852505,
     "Role": "Student"
 }
 
 ### Eliminar un usuario
-DELETE http://localhost:1234/users/7e8fcb51-55ce-11ee-baad-b48c9daeb3a7
+DELETE http://localhost:1234/users/30aca400-6015-11ee-98bd-b48c9daeb3a7

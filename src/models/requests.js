@@ -4,7 +4,7 @@ import { formatDate } from '../utils/formatDate.js'
 export class RequestsModel {
   static async getAll () {
     const requests = await database.query(
-        `SELECT *
+        `SELECT ID, RequestDate, StartTime, EndTime, ClassroomID, ActivityDescription, RequestStatus, BIN_TO_UUID(UserID) UserID, ProgramID, BIN_TO_UUID(ApprovedBy) ApprovedBy, BIN_TO_UUID(ClosedBy) ClosedBy
         FROM Requests
         ORDER BY ID;`
     )
@@ -42,7 +42,7 @@ export class RequestsModel {
             RequestStatus,
             UserID,
             ProgramID)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
+        VALUES (?, ?, ?, ?, ?, ?, UUID_TO_BIN(?), ?);`,
         [RequestDate, StartTime, EndTime, ClassroomID, ActivityDescription, RequestStatus, UserID, ProgramID]
     )
     return created
@@ -69,7 +69,7 @@ export class RequestsModel {
         ClassroomID = ?,
         ActivityDescription = ?,
         RequestStatus = ?,
-        UserID = ?,
+        UserID = UUID_TO_BIN(?),
         ProgramID = ?,
         ApprovedBy = ?,
         ClosedBy = ?

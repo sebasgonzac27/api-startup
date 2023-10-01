@@ -1,8 +1,7 @@
 import z from 'zod'
 
 const DeviceTypeSchema = z.object({
-  TypeName: z.string().nonempty(),
-  ImageURL: z.string().url()
+  TypeName: z.string().nonempty()
 })
 
 export function validateDeviceType (input) {

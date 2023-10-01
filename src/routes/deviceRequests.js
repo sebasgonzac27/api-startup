@@ -1,17 +1,17 @@
 import { Router } from 'express'
 import { DeviceRequestsController } from '../controllers/deviceRequests.js'
 
-export const deviceRequestsController = Router()
+export const deviceRequestsRouter = Router()
 
 // GET
-deviceRequestsController.get('/', DeviceRequestsController.getAll)
-deviceRequestsController.get('/:id', DeviceRequestsController.getById)
+deviceRequestsRouter.get('/', DeviceRequestsController.getAll)
+deviceRequestsRouter.get('/:id', DeviceRequestsController.getById)
 
 // POST
-deviceRequestsController.post('/', DeviceRequestsController.create)
+deviceRequestsRouter.post('/', DeviceRequestsController.create)
 
 // PUT
-deviceRequestsController.put('/:id', DeviceRequestsController.update)
+deviceRequestsRouter.put('/:id', DeviceRequestsController.update)
 
 // DELETE
-deviceRequestsController.delete('/:id', DeviceRequestsController.delete)
+deviceRequestsRouter.delete('/:id', DeviceRequestsController.delete)
