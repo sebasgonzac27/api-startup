@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { ClassroomsController } from '../controllers/classrooms.js'
+import { UserAuth } from '../middlewares/auth.js'
 
 export const classroomsRouter = Router()
 
@@ -8,10 +9,10 @@ classroomsRouter.get('/', ClassroomsController.getAll)
 classroomsRouter.get('/:id', ClassroomsController.getById)
 
 // POST
-classroomsRouter.post('/', ClassroomsController.create)
+classroomsRouter.post('/', UserAuth, ClassroomsController.create)
 
 // PUT
-classroomsRouter.put('/:id', ClassroomsController.update)
+classroomsRouter.put('/:id', UserAuth, ClassroomsController.update)
 
 // DELETE
-classroomsRouter.delete('/:id', ClassroomsController.delete)
+classroomsRouter.delete('/:id', UserAuth, ClassroomsController.delete)

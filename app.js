@@ -11,6 +11,7 @@ import { devicesRouter } from './src/routes/devices.js'
 import { requestsRouter } from './src/routes/requests.js'
 import { deviceTypeRequestsRouter } from './src/routes/deviceTypesRequests.js'
 import { deviceRequestsRouter } from './src/routes/deviceRequests.js'
+import { loginRouter } from './src/routes/login.js'
 
 const app = express()
 
@@ -48,6 +49,8 @@ app.use('/devices', devicesRouter)
 app.use('/requests', requestsRouter)
 app.use('/devicetypesrequests', deviceTypeRequestsRouter)
 app.use('/devicesrequests', deviceRequestsRouter)
+
+app.use('/login', loginRouter)
 
 app.set('port', config.app.port)
 

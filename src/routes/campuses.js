@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { CampusesController } from '../controllers/campuses.js'
+import { UserAuth } from '../middlewares/auth.js'
 
 export const campusesRouter = Router()
 
@@ -8,10 +9,10 @@ campusesRouter.get('/', CampusesController.getAll)
 campusesRouter.get('/:id', CampusesController.getById)
 
 // POST
-campusesRouter.post('/', CampusesController.create)
+campusesRouter.post('/', UserAuth, CampusesController.create)
 
 // PUT
-campusesRouter.put('/:id', CampusesController.update)
+campusesRouter.put('/:id', UserAuth, CampusesController.update)
 
 // DELETE
-campusesRouter.delete('/:id', CampusesController.delete)
+campusesRouter.delete('/:id', UserAuth, CampusesController.delete)

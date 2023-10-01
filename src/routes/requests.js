@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { RequestsController } from '../controllers/requests.js'
+import { UserAuth } from '../middlewares/auth.js'
 
 export const requestsRouter = Router()
 
@@ -8,10 +9,10 @@ requestsRouter.get('/', RequestsController.getAll)
 requestsRouter.get('/:id', RequestsController.getById)
 
 // POST
-requestsRouter.post('/', RequestsController.create)
+requestsRouter.post('/', UserAuth, RequestsController.create)
 
 // PUT
-requestsRouter.put('/:id', RequestsController.update)
+requestsRouter.put('/:id', UserAuth, RequestsController.update)
 
 // DELETE
-requestsRouter.delete('/:id', RequestsController.delete)
+requestsRouter.delete('/:id', UserAuth, RequestsController.delete)

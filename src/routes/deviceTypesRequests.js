@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { DeviceTypeRequestsController } from '../controllers/deviceTypesRequests.js'
+import { UserAuth } from '../middlewares/auth.js'
 
 export const deviceTypeRequestsRouter = Router()
 
@@ -8,10 +9,10 @@ deviceTypeRequestsRouter.get('/', DeviceTypeRequestsController.getAll)
 deviceTypeRequestsRouter.get('/:id', DeviceTypeRequestsController.getById)
 
 // POST
-deviceTypeRequestsRouter.post('/', DeviceTypeRequestsController.create)
+deviceTypeRequestsRouter.post('/', UserAuth, DeviceTypeRequestsController.create)
 
 // PUT
-deviceTypeRequestsRouter.put('/:id', DeviceTypeRequestsController.update)
+deviceTypeRequestsRouter.put('/:id', UserAuth, DeviceTypeRequestsController.update)
 
 // DELETE
-deviceTypeRequestsRouter.delete('/:id', DeviceTypeRequestsController.delete)
+deviceTypeRequestsRouter.delete('/:id', UserAuth, DeviceTypeRequestsController.delete)
