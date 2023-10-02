@@ -9,9 +9,19 @@ const UserSchema = z.object({
 })
 
 export function validateUser (input) {
+  // Convierte el campo "Phone" a número si es una cadena
+  if (typeof input.Phone === 'string') {
+    input.Phone = parseInt(input.Phone, 10) // Convierte a número base 10
+  }
+
   return UserSchema.safeParse(input)
 }
 
 export function validatePartialUser (input) {
+  // Convierte el campo "Phone" a número si es una cadena
+  if (typeof input.Phone === 'string') {
+    input.Phone = parseInt(input.Phone, 10) // Convierte a número base 10
+  }
+
   return UserSchema.partial().safeParse(input)
 }

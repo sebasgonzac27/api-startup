@@ -9,7 +9,7 @@ usersRouter.get('/', UsersController.getAll)
 usersRouter.get('/:id', UsersController.getById)
 
 // POST
-usersRouter.post('/', UserAuth, UsersController.create)
+usersRouter.post('/', UsersController.create)
 
 // PUT
 usersRouter.put('/:id', UserAuth, UsersController.update)

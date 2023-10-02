@@ -10,7 +10,6 @@ Content-Type: application/json
 
 {
     "TypeName": "Convertidor HDMI a VGA",
-    "ImageURL": "https://exitocol.vtexassets.com/arquivos/ids/322711/Cable-Adaptador-HDMI-a-VGA---15cm.jpg?v=637004710162100000"
 }
 
 ### Update a device type

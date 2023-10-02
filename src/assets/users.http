@@ -9,9 +9,9 @@ POST http://localhost:1234/users
 Content-Type: application/json
 
 {
-    "FullName": "Carlos Alberto Delgado Galeano",
-    "Email": "carlos.delgado.galeano@correounivalle.edu.co",
-    "Password": "petus123",
+    "FullName": "Jesus Alberto Gil Ayala",
+    "Email": "jesus.gil@correounivalle.edu.co",
+    "Password": "pirlo420",
     "Phone": 1234567890,
     "Role": "Student"
 }
@@ -29,4 +29,5 @@ Content-Type: application/json
 }
 
 ### Eliminar un usuario
-DELETE http://localhost:1234/users/30aca400-6015-11ee-98bd-b48c9daeb3a7
+DELETE http://localhost:1234/users/f369ee26-6070-11ee-884d-b48c9daeb3a7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjViMTlmNTg4LTYwMTUtMTFlZS05OGJkLWI0OGM5ZGFlYjNhNyIsIkZ1bGxOYW1lIjoiQ2FybG9zIEFsYmVydG8gRGVsZ2FkbyBHYWxlYW5vIiwiRW1haWwiOiJjYXJsb3MuZGVsZ2Fkby5nYWxlYW5vQGNvcnJlb3VuaXZhbGxlLmVkdS5jbyIsIlBhc3N3b3JkIjoiJDJiJDEyJEFWU2tnUXg5VUc2ek5JRjNNNzFwcGV5b3RqU2VlN0FOQU4wRHIwYWFWSDBDakpVUkFHRzVlIiwiUGhvbmUiOiIxMjM0NTY3ODkwIiwiUm9sZSI6IlN0dWRlbnQiLCJpYXQiOjE2OTYxNjQzMTF9.OQqIlKB6fB2vJvcB8f7HEom6BMsxIcoIM20G0OkvdZM
