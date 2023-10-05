@@ -7,13 +7,14 @@ GET http://localhost:1234/users/11ee51cb-241c-2268-aeea-b48c9daeb3a7
 ### Agregar un usuario
 POST http://localhost:1234/users
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjJiOTZjYTJlLTYwZDYtMTFlZS04ODRkLWI0OGM5ZGFlYjNhNyIsIkZ1bGxOYW1lIjoiQ2FybG9zIEFsYmVydG8gRGVsZ2FkbyBHYWxlYW5vIiwiRW1haWwiOiJjYXJsb3MuZGVsZ2Fkby5nYWxlYW5vQGNvcnJlb3VuaXZhbGxlLmVkdS5jbyIsIlBhc3N3b3JkIjoiJDJiJDEyJERocFY0YWNpeXAvM1ZCUkZTZ1RLNU92L3J0TGVLY2tJUnhRMzYzWjBObi80ZEJjRzNvaDZPIiwiUGhvbmUiOiIxMjM0NTY3ODkwIiwiUm9sZSI6IlN0dWRlbnQiLCJpYXQiOjE2OTY1MzI1OTJ9.-rPGGPPAt8EsQWbySG3toyve6C0SenNKpMbd8iCdOwM
 
 {
     "FullName": "Jesus Alberto Gil Ayala",
     "Email": "jesus.gil@correounivalle.edu.co",
     "Password": "pirlo420",
     "Phone": 1234567890,
-    "Role": "Student"
+    "Role": "Administrator"
 }
 
 ### Actualizar un usuario
